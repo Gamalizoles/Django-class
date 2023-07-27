@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-m@(-y*7x&gyhe4h7mw(_g#zr0@gkg$z@1-sea&&!f0akc#kar=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -37,8 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'MorningDjangoHTMLFormsProject'
+    'MorningDjangoHTMLFormsProject',
+    'crispy_forms',
+    'crispy_bootstrap4',
+    'django_daraja'
+
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,7 +128,11 @@ STATICFILES_DIRS = [
     BASE_DIR/ 'static'
 ]
 
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = 'home-page'
+LOGIN_URL = 'user_login'
